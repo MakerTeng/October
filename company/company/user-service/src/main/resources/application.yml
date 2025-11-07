@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: user-service
+  config:
+    import: "optional:nacos:user-service.yaml"
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.52.128:8848
+      config:
+        server-addr: 192.168.52.128:8848
+        file-extension: yaml
+  datasource:
+    url: jdbc:mysql://localhost:3306/company?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  rabbitmq:
+    host: 192.168.52.128 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: /hmall # 虚拟主机
+    username: itheima # 用户名
+    password: 123321 # 密码
+
+server:
+  port: 8082
+
+
